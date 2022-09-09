@@ -1,0 +1,79 @@
+{{ 'gulp-blog-section.css' | asset_url | stylesheet_tag }}
+
+<div {% if section.settings.id_section != blank %}id="{{section.settings.id_section}}"{% endif %}  class="blog-section_container">
+    <div class="blog-section_wrapper">
+        {% if section.settings.section-title != blank %}
+          <div class="blog-section_icon">
+              {%- render 'icon-blog' -%}
+          </div>
+        {% endif %}
+        <div class="blog-section_header">
+            <h3 class="blog-section_title"> {{section.settings.section-title}} </h3>
+            <a class="blog-section_link" href="{{section.settings.section-link}}"> {{section.settings.section-link-title}}</a>
+        </div>
+    </div>
+    <div  id="blog-section" class="blog-section_content">
+        {%- for block in section.blocks -%}
+        <div class="blog-section_post">
+            <img class="blog-section_image" src="{{ block.settings.article.image | img_url: '800x' }}">
+            <p class="blog-section-categories"> {% for tag in block.settings.article.tags %} {{ tag }} / {% endfor %}  {{ block.settings.article.published_at | date: "%b %d, %Y" }}</p>
+            <p class="blog-section-article"> {{ block.settings.article.title }} </p>
+            <p class="blog-section-excerpt"> {{ block.settings.article.excerpt_or_content | strip_html | truncatewords: 20 }}</p>
+            <a class="blog-section-blogLink" href="{{ block.settings.article.url }}"> Continue Reading </a>
+        </div>
+        {%- endfor -%}
+    </div>
+</div>
+
+
+{% schema %}
+{
+	"name": "Blog Section",
+	"tag": "section",
+	"settings": [
+    {
+      "type": "text",
+      "id": "id_section",
+      "label": "ID for scroll"
+    },
+    {
+			"type": "text",
+			"id": "section-title",
+			"label": "Main Title"
+		},
+		{
+			"type": "text",
+			"id": "section-link-title",
+			"label": "Link Text"
+		},
+        {
+			"type": "url",
+			"id": "section-link",
+			"label": "Link Text URL"
+		}
+    ], 
+        "blocks": [
+            {
+              "limit": 3,
+              "name": "Featured Article",
+              "type": "featured_article",
+              "settings": [
+                {
+                  "type": "article",
+                  "id": "article",
+                  "label": "Article"
+                }
+              ] 
+            }
+          ],
+
+
+    "presets":[
+        {
+           "name":"Blog Section"
+        }
+     ]
+
+    }
+
+{% endschema %}

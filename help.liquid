@@ -1,0 +1,251 @@
+{{ 'gulp-help.css' | asset_url | stylesheet_tag }}
+
+<style>
+	.help-section__form .contact__button .button {
+		background-color: {{ section.settings.button_background }};
+	}
+</style>
+
+<!-- csform -->
+
+<!-- csform -->
+<script src="https://ecf.cirkleinc.com/public/frontend/js/form-builder-helper.js"></script>
+
+<div {% if section.settings.id_section != blank %}id="{{section.settings.id_section}}"{% endif %} class="help-section page-width">
+	<div class="help-section__content">
+		{% if section.settings.heading != blank %}
+			<div class="help-section__heading">
+				{% if section.settings.background_image != blank %}
+					<div class="help-section__heading--background">
+						<img src="{{ section.settings.background_image | img_url: "master" }}" alt="GradPrep" >
+					</div>
+				{% endif %}
+				{{ section.settings.heading }}
+			</div>
+			<div class="help-section__description">
+				{% if section.settings.description != blank %}
+					{{ section.settings.description }}
+				{% endif %}
+			</div>
+		{% endif %}
+		{%- for block in section.blocks -%}
+			{% if block.settings.info != blank %}
+				<div class="help-section__info">
+					{% if block.settings.info_icon != blank %}
+						<div class="help-section__info--image">
+							<img src="{{ block.settings.info_icon | img_url: "master" }}" alt="GradPrep" >
+						</div>
+					{% endif %}
+					<div class="help-section__info--text">
+						{{ block.settings.info }}
+					</div>
+				</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+
+
+	<div class="center-col cs-custom-form s438706382 help-section__form">
+		<div class="form-col-wrap">
+			<form method="post" action="https://ecf.cirkleinc.com/api/form-submit" class="cs-form-wrap" id="7326ec4a-d7a2-4286-aeee-bc8c849e31e5">
+				<div class="Polaris-FormLayout">
+					<div class="Polaris-FormLayout__Item">
+						<div class="sc-jJEJSO laquCT contact__fields">
+							<div class="sc-citwmv sc-iUuytg dCpuqx esdhrP drop-area-warp">
+								<div class="contact__fields--top">
+									<div class="element-group cs-width-50 field">
+										<label class="field__label" for="your_name" class="required">{{ section.settings.form_name_label}} <span class="highlighted-star" aria-hidden="true">*</span></label>
+										<input type="text"
+											   id="your_name"
+											   name="your_name"
+											   placeholder="{{ section.settings.form_name_placeholder }}"
+											   value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+											   class="field__input">
+									</div>
+									<div class="element-group cs-width-50 field">
+										<label class="field__label" for="email" class="required">{{ section.settings.form_email_label }} <span class="highlighted-star" aria-hidden="true">*</span></label>
+										<input type="email" id="email" name="email" placeholder="{{ section.settings.form_email_label }}" class="field__input">
+									</div>
+								</div >
+
+								<div class="contact__fields--bottom">
+									<div class="element-group cs-width-100 field">
+										<label class="field__label" for="subject" class="required">{{ section.settings.form_subject_label }} <span class="highlighted-star" aria-hidden="true">*</span></label>
+										<select name="subject" id="subject" class="field__input condition-trigger">
+												{% for block in section.blocks  %}
+											{% case block.type %}
+												{%  when "subject" %}
+													{% if block.settings.subject_text  != blank %}
+														<option value="{{ block.settings.subject_text }}">{{ block.settings.subject_text }}</option>
+													{% endif %}
+											{% endcase %}
+												{% endfor %}
+										</select>
+									</div>
+									<div class="element-group cs-width-100 field">
+										<label class="field__label" for="message" class="required">{{ section.settings.form_message_label }} <span class="highlighted-star" aria-hidden="true">*</span></label>
+										<textarea name="message" id="ContactForm-body" rows="8" class="text-area field__input" placeholder="{{ section.settings.form_message_placeholder }}"></textarea>
+										<div class="field__info">
+											<div class="field__info--image">
+												<img src="{{ section.settings.form_info_img | img_url: "master" }}" alt="GradPrep" >
+											</div>
+											<div class="field__info--message">
+												{{ section.settings.form_info_message }}
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="element-group">
+					<div class="form-submit-btn-wrap contact__button" style="justify-content: left; display: flex;">
+						<button type="submit" class="button" >{{ section.settings.button_text }}</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</div>
+
+<!-- Modal HTML embedded directly into document -->
+<div id="help-form-modal" class="modal">
+</div>
+{% schema %}
+{
+	"name": "Help",
+	"tag": "section",
+	"settings": [
+  {
+    "type": "text",
+    "id": "id_section",
+    "label": "ID for scroll"
+  },
+	{
+		"type": "text",
+		"id": "heading",
+		"label": "Heading",
+		"default": "How can we help?"
+	},
+	{
+		"type": "image_picker",
+		"id": "background_image",
+		"label": "Background image"
+	},
+	{
+		"type": "text",
+		"id": "description",
+		"label": "Description",
+		"default": "<p> Have an inquiry or some feedback for us? Fill out the form, drop an email or call us to contact our team. </p>"
+	},
+	{
+		"type": "text",
+		"id": "form_name_label",
+		"label": "Name field label",
+		"default": "Your Name"
+	},
+	{
+		"type": "text",
+		"id": "form_name_placeholder",
+		"label": "Name field placeholder",
+		"default": "John Doe"
+	},
+	{
+		"type": "text",
+		"id": "form_email_label",
+		"label": "Email field label",
+		"default": "Your Email"
+	},
+	{
+		"type": "text",
+		"id": "form_email_placeholder",
+		"label": "Email field placeholder",
+		"default": "Johndoe@gmail.com"
+	},
+	{
+		"type": "text",
+		"id": "form_subject_label",
+		"label": "Subject field label",
+		"default": "Subject"
+	},
+	{
+		"type": "text",
+		"id": "form_subject_placeholder",
+		"label": "Subject field placeholder",
+		"default": "What’s the inquiry or feedback?"
+	},
+	{
+		"type": "text",
+		"id": "form_message_label",
+		"label": "Message field label",
+		"default": "Message"
+	},
+	{
+		"type": "text",
+		"id": "form_message_placeholder",
+		"label": "Message field placeholder",
+		"default": "Write your message here..."
+	},
+	{
+		"type": "image_picker",
+		"id": "form_info_img",
+		"label": "Info icon"
+	},
+	{
+		"type": "richtext",
+		"id": "form_info_message",
+		"label": "Info message",
+		"default": "<p>Please enter the details of your request. A member of our team will respond as soon as possible</p>"
+	},
+	{
+		"type": "text",
+		"id": "button_text",
+		"label": "Button text",
+		"default": "send your message"
+	},
+	{
+		"type": "color",
+		"id": "button_background",
+		"label": "Button background",
+		"default": "#DE3463"
+	}
+	],
+	"blocks": [
+	  {
+		"type": "help",
+		"name": "Help",
+		"settings": [
+		  {
+			"type": "richtext",
+			"id": "info",
+			"label": "Help info"
+		  },
+		  {
+			"type": "image_picker",
+			"id": "info_icon",
+			"label": "Help icon"
+		  }
+		]
+		},
+		{
+		"type": "subject",
+		"name": "Subject",
+		"settings": [
+		{
+			"type": "text",
+			"id": "subject_text",
+			"label": "Help info"
+			}
+		]
+		}
+
+	 ],
+	"presets":[
+		{
+		   "name":"Help"
+		}
+	 ]
+}
+{% endschema %} 

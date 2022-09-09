@@ -1,0 +1,172 @@
+{{ 'gulp-product-features-block.css' | asset_url | stylesheet_tag }}
+<div {% if section.settings.id_section != blank %}id="{{section.settings.id_section}}"{% endif %} class="features-block_container"> 
+	<div class="features-block_image">
+		<img class="" src="{{ section.settings.image | img_url: '900x' }}">
+	</div>
+	<div class="features-block_wrapper">
+		<div id="category-slider" class="gallery-slider"> 
+			
+					<div id="thumbnail-slider" class="gallery-slider__thumbnails"> 
+						{%- for block in section.blocks -%}
+						<div class="background-item">
+							<div class="category-selection__item">
+								<div class="category-selection__item--content">
+						 			<div class="image_item" style="background-image: url('{{ block.settings.category_image | img_url }}">
+										
+									</div>
+									<div class="category-selection__item--text">
+										{{block.settings.category_text}}
+									</div>
+								</div>
+							</div>	
+						</div>
+						{% endfor %}
+					</div>
+
+					<div class="gallery-slider__images">	
+						{%- for block in section.blocks -%}
+							<div class="item"> 
+							
+									<h3 class="item-header">{{block.settings.category_header}}</h3> 
+									<span class="item-list">
+										{% if block.settings.category_item1 != blank %}
+											<p class="item">{% render 'icon-check' %}{{block.settings.category_item1}} </p> 
+										{% endif %}
+										{% if block.settings.category_item2  != blank %}
+											<p class="item">{% render 'icon-check' %}{{block.settings.category_item2}} </p>
+										{% endif %}
+										{% if block.settings.category_item3  != blank%}
+											<p class="item">{% render 'icon-check' %}{{block.settings.category_item3}} </p>
+										{% endif %}
+										{% if block.settings.category_item4 != blank %}
+											<p class="item">{% render 'icon-check' %}{{block.settings.category_item4}} </p>
+										{% endif %}
+										{% if block.settings.category_item5 != blank %}
+											<p class="item">{% render 'icon-check' %}{{block.settings.category_item5}} </p>
+										{% endif %}
+										{% if block.settings.category_item6  != blank%}
+											<p class="item">{% render 'icon-check' %}{{block.settings.category_item6}} </p>
+										{% endif %}
+										{% if block.settings.category_item7 != blank %}
+											<p class="item">{% render 'icon-check' %}{{block.settings.category_item7}} 	</p>
+										{% endif %}
+
+										<a class="button button-image" href="{{block.settings.button_url}}" style="background-color: {{ block.settings.button_background_color }}; color: {{ block.settings.button_font_color }};">{{block.settings.button-text}}</a>
+									</span>
+
+									
+						</div>
+						{% endfor %}
+					</div>
+ 			
+		</div>
+		
+	</div>
+
+</div>
+
+
+{% schema %}
+{
+	"name":"Product Features Block",
+	"tag":"section",
+	"class":"spaced-section custom-spaced-section",
+	"settings":[
+    {
+      "type": "text",
+      "id": "id_section",
+      "label": "ID for scroll"
+    },
+	   {
+		  "type":"image_picker",
+		  "id":"image",
+		  "label":"Main image"
+	   }
+	],
+	"blocks":[
+	   {
+		  "name":"Category",
+		  "type":"category",
+		  "limit": 4,
+		  "settings":[
+			 {
+				"type":"image_picker",
+				"id":"category_image",
+				"label":"category image"
+			 },
+			 {
+				"type":"text",
+				"id":"category_text",
+				"label":"Category name"
+			 },
+			 {
+				"type":"text",
+				"id":"category_header",
+				"label":"Category Header Text"
+			 },
+			 {
+				"type":"text",
+				"id":"category_item1",
+				"label":"Category Item 1"
+			 },
+			 {
+				"type":"text",
+				"id":"category_item2",
+				"label":"Category Item 2"
+			 },
+			 {
+				"type":"text",
+				"id":"category_item3",
+				"label":"Category Item 3"
+			 },
+			 {
+				"type":"text",
+				"id":"category_item4",
+				"label":"Category Item 4"
+			 },
+			 {
+				"type":"text",
+				"id":"category_item5",
+				"label":"Category Item 5"
+			 },
+			 {
+				"type":"text",
+				"id":"category_item6",
+				"label":"Category Item 6 "
+			 },
+			 {
+				"type":"text",
+				"id":"category_item7",
+				"label":"Category Item 7 "
+			 },
+			 {
+				"type": "text",
+				"id": "button-text",
+				"label": "Button Text"
+			},
+			{ 
+				"type": "url",
+				"id": "button_url",
+				"label": "Button url"
+			},
+			{ 
+				"type": "color",
+				"id": "button_background_color",
+				"label": "Button background color"
+			},
+			{ 
+				"type": "color",
+				"id": "button_font_color",
+				"label": "Button font color"
+			}
+			 
+		  ]
+	   }
+	],
+	"presets":[
+	   {
+		  "name":"Product Features Block"
+	   }
+	]
+ }
+{% endschema %} 

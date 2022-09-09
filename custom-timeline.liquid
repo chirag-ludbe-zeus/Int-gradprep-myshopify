@@ -1,0 +1,171 @@
+{{ 'component-image-with-text.css' | asset_url | stylesheet_tag }}
+{{ 'gulp-timeline.css' | asset_url | stylesheet_tag }}
+
+<div {% if section.settings.id_section != blank %}id="{{section.settings.id_section}}"{% endif %} class="timeline page-width">
+  <div class="image-with-text__grid grid grid--gapless grid--1-col grid--2-col-tablet gradient{% if section.settings.layout == 'text_first' %} image-with-text__grid--reverse{% endif %}">
+    <div class="grid__item">
+      <div class="image-with-text__media {% if section.settings.image != blank %}media{% else %}image-with-text__media--placeholder placeholder{% endif %}"
+      >
+        {%- if section.settings.image != blank -%}
+          <img class="image-with-text__image"
+            srcset="{%- if section.settings.image.width >= 165 -%}{{ section.settings.image | img_url: '165x' }} 165w,{%- endif -%}
+              {%- if section.settings.image.width >= 360 -%}{{ section.settings.image | img_url: '360x' }} 360w,{%- endif -%}
+              {%- if section.settings.image.width >= 535 -%}{{ section.settings.image | img_url: '535x' }} 535w,{%- endif -%}
+              {%- if section.settings.image.width >= 750 -%}{{ section.settings.image | img_url: '750x' }} 750w,{%- endif -%}
+              {%- if section.settings.image.width >= 1070 -%}{{ section.settings.image | img_url: '1070x' }} 1070w,{%- endif -%}
+              {%- if section.settings.image.width >= 1500 -%}{{ section.settings.image | img_url: '1500x' }} 1500w,{%- endif -%}
+              {{ section.settings.image | img_url: 'master' }} {{ section.settings.image.width }}w"
+            src="{{ section.settings.image | img_url: '1500x' }}"
+            sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+            alt="{{ section.settings.image.alt | escape }}"
+            loading="lazy"
+            width="{{ section.settings.image.width }}"
+          >
+        {%- else -%}
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="grid__item">
+      <div class="image-with-text__content">
+        {%- for block in section.blocks -%}
+          {% case block.type %}
+            {%- when 'heading' -%}
+              <h2 class="image-with-text__heading h1" {{ block.shopify_attributes }}>
+                {{ block.settings.heading | escape }}
+              </h2>
+            {%- when 'text' -%}
+              <div class="image-with-text__inner">
+                {% render "icon-timeline" %}
+                {% render "icon-timeline-mobile" %}
+                <div class="image-with-text__text image-with-text__date" {{ block.shopify_attributes }}>{{ block.settings.date_1 }}</div>
+                <div class="image-with-text__text rte" {{ block.shopify_attributes }}>{{ block.settings.text_1 }}</div>
+                <div class="image-with-text__text image-with-text__text--pink rte" {{ block.shopify_attributes }}>
+                  <span class="image-with-text__span">{{ block.settings.text_pink_1 }}{% render "icon-highlight-top" %}</span>
+                  <span class="image-with-text__span">{{ block.settings.text_pink_2 }}{% render "icon-highlight-bottom" %}</span>
+                </div>
+                <div class="image-with-text__text image-with-text__date" {{ block.shopify_attributes }}>{{ block.settings.date_2 }}</div>
+                <a{% if block.settings.link != blank %} href="{{ block.settings.link }}"{% endif %} class="image-with-text__link link"{% if block.settings.link == blank %} aria-disabled="true"{% endif %} {{ block.shopify_attributes }}>
+                  {{ block.settings.link_label | escape }}
+                </a>
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.timeline.name",
+  "class": "custom-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "id_section",
+      "label": "ID for scroll"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.timeline.settings.image.label",
+      "info": "t:sections.timeline.settings.image.info"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "image_first",
+          "label": "t:sections.timeline.settings.layout.options__1.label"
+        },
+        {
+          "value": "text_first",
+          "label": "t:sections.timeline.settings.layout.options__2.label"
+        }
+      ],
+      "default": "image_first",
+      "label": "t:sections.timeline.settings.layout.label",
+      "info": "t:sections.timeline.settings.layout.info"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "t:sections.timeline.blocks.heading.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Heading",
+          "label": "t:sections.timeline.blocks.heading.settings.heading.label"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:sections.timeline.blocks.text.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "date_1",
+          "default": "1984",
+          "label": "t:sections.timeline.blocks.text.settings.date_1.label"
+        },
+        {
+          "type": "richtext",
+          "id": "text_1",
+          "default": "<p>Some text</p>",
+          "label": "t:sections.timeline.blocks.text.settings.text_1.label"
+        },
+        {
+          "type": "text",
+          "id": "text_pink_1",
+          "default": "Some text",
+          "label": "t:sections.timeline.blocks.text.settings.text_pink_1.label"
+        },
+        {
+          "type": "text",
+          "id": "text_pink_2",
+          "default": "Some text",
+          "label": "t:sections.timeline.blocks.text.settings.text_pink_2.label"
+        },
+        {
+          "type": "text",
+          "id": "date_2",
+          "default": "2022",
+          "label": "t:sections.timeline.blocks.text.settings.date_2.label"
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "default": "Link label",
+          "label": "t:sections.timeline.blocks.text.settings.link_label.label",
+          "info": "t:sections.timeline.blocks.text.settings.link_label.info"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.timeline.blocks.text.settings.link.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.timeline.presets.name",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

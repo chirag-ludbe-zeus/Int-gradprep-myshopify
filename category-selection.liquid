@@ -1,0 +1,103 @@
+{{ 'gulp-category-selection.css' | asset_url | stylesheet_tag }}
+
+<div {% if section.settings.id_section != blank %}id="{{section.settings.id_section}}"{% endif %} class="page-width category-selection">
+    <div class="category-selection__heading">
+      <div class="category-selection__heading--left custom-arrow-image">
+        <img src="{{ section.settings.arrow_left |  img_url: "master"}}" alt="Left Arrow" >
+      </div>
+      <div class="category-selection__heading--center">
+        {{ section.settings.heading }}
+      </div>
+      <div class="category-selection__heading--right custom-arrow-image">
+        <img src="{{ section.settings.arrow_right |  img_url: "master"}}" alt="Right Arrow" >
+      </div>
+  </div>
+  <div class="category-selection__items">
+    {% for block in section.blocks %}
+        <a class="category-selection__item--link" href="{{ block.settings.category_url }}">
+          <div class="category-selection__item--background">
+            <div class="category-selection__item">
+              <div class="category-selection__item--content">
+                <div class="category-selection__item--image" style="background-image: url('{{ block.settings.background_image |  img_url: "master"}}')" >
+                  <img src="{{ block.settings.category_image |  img_url: "master"}}" alt="Category">
+                </div>
+                <div class="category-selection__item--text">
+                  {{ block.settings.category_text }}
+                </div>
+              </div>
+            </div>
+            <div class="category-selection__item--background-image">
+              <img src="{{ section.settings.hover_image |  img_url: "master"}}" class="category-selection__item--background-image__img" alt="Background Image">
+            </div>
+          </div>
+        </a>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Category",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "id_section",
+      "label": "ID for scroll"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "arrow_left",
+      "label": "Arrow left"
+    },
+    {
+      "type": "image_picker",
+      "id": "arrow_right",
+      "label": "Arrow right"
+    },
+    {
+      "type": "image_picker",
+      "id": "hover_image",
+      "label": "Hover image"
+    }
+  ],
+  "blocks": [
+      {
+        "name": "Category",
+        "type": "category",
+        "settings": [
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Category background image"
+      },
+      {
+        "type": "image_picker",
+        "id": "category_image",
+        "label": "category image"
+      },
+      {
+        "type": "text",
+        "id": "category_text",
+        "label": "Category name"
+      },
+      {
+        "type": "url",
+        "id": "category_url",
+        "label": "Category URL"
+      }
+    ]
+   }
+  ],
+  "presets": [
+    {
+      "name": "Category Selector"
+    }
+  ]
+}
+{% endschema %}

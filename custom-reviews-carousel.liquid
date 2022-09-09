@@ -1,0 +1,127 @@
+{{ 'gulp-reviews-carousel.css' | asset_url | stylesheet_tag }}
+<div {% if section.settings.id_section != blank %}id="{{section.settings.id_section}}"{% endif %} class="reviews__wrapper">
+	<div class="page-width">
+		<div class="reviews__section">
+			<div class="reviews__list">
+				{%- for block in section.blocks -%}
+					<div class="reviews__item">
+						{%- if block.settings.star != blank -%}
+							<div class="reviews__star star--{{block.settings.star}}">
+								{%- if block.settings.image != blank -%}
+									<div class="reviews__image">
+										<img class="reviews__img" src="{{ block.settings.image | img_url }}" alt="{{ section.settings.image.alt | escape }}" loading="lazy">
+									</div>
+								{%- endif -%}
+								{% assign star = block.settings.star | plus: 0 %}
+								{% for i in (1..5) %}
+									{% if i <= star %} 
+										{%- render 'icon-full-star' -%}
+									{% else %}
+										{%- render 'icon-empty-star' -%}
+									{% endif %}
+								{% endfor %}
+							</div>
+						{%- endif -%}
+						{%- if block.settings.quote != blank -%}
+							<div class="reviews__quote">{{block.settings.quote}}</div>
+						{%- endif -%}
+						{%- if block.settings.title != blank -%}
+							<div class="reviews__name">- {{ block.settings.title }}</div>
+						{%- endif -%}
+						{%- render 'icon-reviews-carousel-box' -%}
+					</div>
+				{%- endfor -%}
+			</div>
+			{%- if section.settings.link != blank -%}
+				<div class="reviews__link">
+					<a href="{{section.settings.link}}" class="link">{{section.settings.link_label}}</a>
+				</div>
+			{%- endif -%}
+		</div>
+	</div>
+</div>
+
+
+{% schema %}
+{
+	"name": "Reviews Carousel",
+	"class": "reviews spaced-section--full-width",
+	"tag": "section",
+	"settings": [
+    {
+      "type": "text",
+      "id": "id_section",
+      "label": "ID for scroll"
+    },
+		{
+			"type": "url",
+			"id": "link",
+			"label": "Link"
+		},
+		{
+			"type": "text",
+			"id": "link_label",
+			"label": "Link label"
+		}
+	],
+	"blocks": [
+		{
+			"type": "review",
+			"name": "Review",
+			"limit": 10,
+			"settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Customer photo",
+					"info": "For best results use 75x75"
+                },
+				{
+					"type": "select",
+					"id": "star",
+					"label": "Star review",
+					"options": [
+						{
+							"value": "1",
+							"label": "1"
+						},
+						{
+							"value": "2",
+							"label": "2"
+						},
+						{
+							"value": "3",
+							"label": "3"
+						},
+						{
+							"value": "4",
+							"label": "4"
+						},
+						{
+							"value": "5",
+							"label": "5"
+						}
+					],
+					"default": "5"
+				},
+				{
+					"type": "richtext",
+					"id": "quote",
+					"label": "Quote review"
+				},
+				{
+					"type": "text",
+					"id": "title",
+					"default": "Name",
+					"label": "Customer Name"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "Reviews Carousel"
+		}
+	]
+}
+{% endschema %}
