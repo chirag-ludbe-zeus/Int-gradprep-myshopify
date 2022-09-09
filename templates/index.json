@@ -524,48 +524,6 @@
         "testimonial-heading": "Chloe",
         "testimonial-text": "<p>The GRE study modules are robust & covered every area of the exam. Going between practice mode and learner mode made studying a bereeze. <\/p>"
       }
-    },
-    "166271572695536e36": {
-      "type": "testimonial-section",
-      "blocks": {
-        "16627157264c6e5750-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Heading Here",
-            "mobile_text_align": "center",
-            "heading-font-size": 26
-          }
-        },
-        "16627157264c6e5750-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "custom-text-size": 16
-          }
-        },
-        "16627157264c6e5750-2": {
-          "type": "button",
-          "settings": {
-            "testimonial-section-cta-button": "Get Prepped",
-            "testimonial-section-cta-button-link": "",
-            "testimonial-section-cta-button-color": "#de3463"
-          }
-        }
-      },
-      "block_order": [
-        "16627157264c6e5750-0",
-        "16627157264c6e5750-1",
-        "16627157264c6e5750-2"
-      ],
-      "settings": {
-        "id_section": "",
-        "block_width": "normal",
-        "height": "adapt",
-        "layout": "text_first",
-        "layout_mobile": "image_top",
-        "testimonial-heading": "Username",
-        "testimonial-text": "<p>User's Testimonial<\/p>"
-      }
     }
   },
   "order": [
@@ -582,7 +540,6 @@
     "16383799536dcfe619",
     "163838000858b51d3b",
     "1662040778734a2ba8",
-    "1662633483b90f7628",
-    "166271572695536e36"
+    "1662633483b90f7628"
   ]
 }
