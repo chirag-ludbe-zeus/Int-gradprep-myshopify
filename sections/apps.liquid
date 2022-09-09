@@ -1,0 +1,36 @@
+<div {% if section.settings.id_section != blank %}id="{{section.settings.id_section}}"{% endif %} class="{% if section.settings.include_margins %}page-width{% endif %}">
+  {%- for block in section.blocks -%}
+    {% render block %}
+  {%- endfor -%}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.apps.name",
+  "tag": "section",
+  "class": "spaced-section yotpo-block-widget",
+  "settings": [
+    {
+      "type": "text",
+      "id": "id_section",
+      "label": "ID for scroll"
+    },
+    {
+      "type": "checkbox",
+      "id": "include_margins",
+      "default": true,
+      "label": "t:sections.apps.settings.include_margins.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.apps.presets.name"
+    }
+  ]
+}
+{% endschema %}

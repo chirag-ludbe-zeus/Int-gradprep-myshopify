@@ -1,0 +1,114 @@
+{{ 'gulp-feature-set-carousel.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .feature-set-carousel__button a {
+    background: {{ section.settings.button_background }}
+  }
+</style>
+
+<div {% if section.settings.id_section != blank %}id="{{section.settings.id_section}}"{% endif %} class="feature-set-carousel">
+  <div class="feature-set-carousel__top">
+    <div class="feature-set-carousel__heading">
+      {{ section.settings.heading }}
+    </div>
+    {% unless section.settings.button_under_carousel == true %}
+      <div class="feature-set-carousel__button">
+        {% if section.settings.button_text != blank %}
+          <a href="{{section.settings.button_url}}" class="button  button--primary" >
+            {{ section.settings.button_text }}
+          </a>
+        {% endif %}
+      </div>
+    {% endunless %}
+  </div>
+  <div class="feature-set-carousel__bottom">
+    <div class="feature-set-carousel__items">
+      {% for block in section.blocks %}
+          <div class="feature-set-carousel__item">
+            <div class="feature-set-carousel__item--image">
+              <img src="{{ block.settings.image |  img_url: 'master'}}" alt="GradPrep" >
+            </div>
+            <div class="feature-set-carousel__item--text ">
+              {{ block.settings.text }}
+            </div>
+          </div>
+      {% endfor %}
+    </div>
+    {% if section.settings.button_under_carousel == true %}
+      <div class="feature-set-carousel__button">
+        {% if section.settings.button_text != blank %}
+          <a href="{{section.settings.button_url}}" class="button  button--primary" >
+            {{ section.settings.button_text }}
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+
+</div>
+
+
+{% schema %}
+{
+  "name": "Feature Set Carousel",
+  "tag": "section",
+  "class": "spaced-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "id_section",
+      "label": "ID for scroll"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_under_carousel",
+      "label": "Move button under the carousel block",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Button Background",
+      "default": "#DD2C5E"
+    }
+  ],
+  "blocks": [
+      {
+        "name": "Feature Set Item",
+        "type": "feature",
+        "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Text"
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Text"
+      }
+    ]
+   }
+  ],
+  "presets": [
+    {
+      "name": "Feature Set Carousel"
+    }
+  ]
+}
+{% endschema %}

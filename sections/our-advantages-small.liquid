@@ -1,0 +1,85 @@
+{% if section.blocks.size > 0 %}
+  <div {% if section.settings.id_section != blank %}id="{{section.settings.id_section}}"{% endif %} class="our-advantages-small">
+    <div class="our-advantages-small__section" style="background-color: {{section.settings.background}};">
+      <div class="page-width our-advantages-small__container">
+        <div class="our-advantages-small__block our-advantages-small__block--header">
+          {% if section.settings.subtitle != blank %}
+            <div class="our-advantages-small__subtitle">{{section.settings.subtitle}}</div>
+          {% endif %}  
+          {% if section.settings.title != blank %}
+            <h2 class="our-advantages-small__title">{{section.settings.title | remove: "<p>" | remove: "</p>"}}</h2>
+          {% endif %}      
+        </div>
+        <div class="our-advantages-small__block our-advantages-small__block--list">
+          <ul class="our-advantages-small__list">
+            {% for block in section.blocks %}
+              <li class="our-advantages-small__item">
+                {% if block.settings.icon != blank %}
+                  <img src="{{block.settings.icon | img_url: '60x60' }}" alt="{{block.settings.icon.alt | default: block.settings.title}}" class="our-advantages-small__item-icon" loading = "lazy">
+                {% endif %}
+                {% if block.settings.title != blank %}
+                  <h3 class="our-advantages-small__item-title">{{block.settings.title}}</h3>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>      
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Our advantages small",
+  "tag": "section",
+  "class": "section-our-advantages-small",
+  "settings": [
+    {
+      "type": "text",
+      "id": "id_section",
+      "label": "ID for scroll"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background color",
+      "default": "#EFEFEF"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle"
+    }
+  ],
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "advantage",
+      "name": "Advantage",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our advantages small"
+    }
+  ]
+}
+{% endschema %}

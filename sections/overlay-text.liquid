@@ -1,0 +1,59 @@
+{% assign title = section.settings.title %}
+{% assign description = section.settings.description %}
+{% assign svg_backround = section.settings.svg_backround %}
+{% if title != blank or description != blank%}
+  <div {% if section.settings.id_section != blank %}id="{{section.settings.id_section}}"{% endif %} class="overlay-text">
+    <div class="page-width overlay-text__container">
+      <div class="overlay-text__block">        
+        {% if svg_backround != blank %}
+          <div class="overlay-text__background">
+            {{svg_backround}}
+          </div>
+        {% endif %}
+        <div class="overlay-text__content">
+          {% if title != blank %}
+            <h2 class="overlay-text__title">{{title | remove: "<p>" | remove: "</p>"}}</h2>
+          {% endif %}
+          {% if description != blank %}
+            <div class="overlay-text__description">{{description}}</div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+{% schema %}
+{
+  "name": "Overlay Text",
+  "tag": "section",
+  "class": "section-overlay-text",
+  "settings": [
+    {
+      "type": "text",
+      "id": "id_section",
+      "label": "ID for scroll"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "textarea",
+      "id": "svg_backround",
+      "label": "SVG Background",
+      "info": "Embed the (preserveAspectRatio='none') code to your svg tag <svg preserveAspectRatio='none'><\/svg> for filling it in by content"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Overlay Text"
+    }
+  ]
+}
+{% endschema %}
