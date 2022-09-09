@@ -1,1 +1,208 @@
-{"current":{"colors_solid_button_labels":"#FFFFFF","colors_accent_1":"#de3463","colors_accent_2":"#333333","colors_text":"#333333","colors_outline_button_labels":"#de3463","colors_background_1":"#FFFFFF","colors_background_2":"#efefef","type_header_font":"roboto_condensed_n7","type_body_font":"roboto_n4","body_scale":100,"type_button_font":"roboto_mono_n4","sale_badge_color_scheme":"accent-1","sold_out_badge_color_scheme":"background-1","page_width":"1200","social_twitter_link":"","social_facebook_link":"https:\/\/www.facebook.com\/gradprepofficial","social_instagram_link":"https:\/\/www.instagram.com\/gradprepofficial","favicon":"shopify:\/\/shop_images\/Group_3ff1ef46-8e24-4350-9d30-bf263c0f4b66.png","currency_code_enabled":false,"autocomplete_cart_discount":"","discount_percent":0,"checkout_logo_image":"shopify:\/\/shop_images\/GradPrep-Wordmark-Horizontal-01.png","checkout_accent_color":"#de3463","checkout_button_color":"#e22358","checkout_error_color":"#de3463","sections":{"announcement-bar":{"type":"announcement-bar","blocks":{"announcement-bar-0":{"type":"announcement","settings":{"text":"Get Started Today for $1!","color_scheme":"inverse","link":""}}},"block_order":["announcement-bar-0"],"settings":{}},"header":{"type":"header","settings":{"id_section":"","color_scheme":"background-1","logo":"shopify:\/\/shop_images\/GradPrep-horizontal_1fa319a4-b6b2-442a-9008-0605985a8f0c.png","logo_svg":"https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/8904\/9026\/files\/GradPrep-horizontal.svg?v=1639745652","menu":"main-menu","menu_second":"second-menu","menu_account":"account-menu","menu_mobile":"mobile-menu","show_line_separator":true}},"footer":{"type":"footer","blocks":{"footer-0":{"type":"link_list","settings":{"heading":"Our Products","menu":"our-products"}},"bab1964a-ff42-41dd-8854-10c2f164ae6a":{"type":"link_list","settings":{"heading":"Information","menu":"information"}},"4d8bacca-1ffd-4679-afdc-de5eaeb1f199":{"type":"link_list","settings":{"heading":"Contact us","menu":"contact-us"}},"c2a8ea02-a312-49bc-af92-14fbf6acdcc9":{"type":"legal","settings":{"url_page":"shopify:\/\/products\/gmat-test-prep","legal_text":"GMAT™ is a registered trademark of the Graduate Management Admission Council™. The Graduate Management Admission Council does not endorse, and is not  affiliated with the owner or content of GradPrep.com."}},"c468c482-4e88-4101-b7af-6c6e9f974715":{"type":"legal","settings":{"url_page":"shopify:\/\/products\/gre-test-prep","legal_text":"GRE® is a registered trademark of ETS. This product is not endorsed or approved by ETS."}},"0598ea13-c9cc-451c-be74-84b0a3c3022f":{"type":"legal","settings":{"url_page":"shopify:\/\/products\/lsat-test-prep","legal_text":"LSAT® is a trademark owned by LSAC, which is not affiliated with, and does not endorse, this GradPrep.com."}},"11ac171b-86a1-456a-9a98-eafc92c3ff4b":{"type":"legal","settings":{"url_page":"shopify:\/\/products\/mcat-test-prep","legal_text":"MCAT® is a registered trademark of the Association of American Medical Colleges."}}},"block_order":["footer-0","bab1964a-ff42-41dd-8854-10c2f164ae6a","4d8bacca-1ffd-4679-afdc-de5eaeb1f199","c2a8ea02-a312-49bc-af92-14fbf6acdcc9","c468c482-4e88-4101-b7af-6c6e9f974715","0598ea13-c9cc-451c-be74-84b0a3c3022f","11ac171b-86a1-456a-9a98-eafc92c3ff4b"],"settings":{"id_section":"","color_scheme":"background-1","newsletter_enable":true,"copyright__content":"LearningExpress, LLC. All rights reserved.","legal_text":"GRE® is a registered trademark of ETS. This product is not endorsed or approved by ETS. GMAT™ is a registered trademark of the Graduate Management Admission Council™. The Graduate Management Admission Council does not endorse, and is not affiliated with the owner or content of GradPrep.com. LSAT® is a trademark owned by LSAC, which is not affiliated with, and does not endorse, this GradPrep.com. MCAT® is a registered trademark of the Association of American Medical Colleges.","newsletter_heading":"Start","newsletter_heading--underline-word":"Today for $1","newsletter_text":"Try GradPrep for one week for just $1!","show_social":true,"enable_country_selector":false,"enable_language_selector":false,"payment_enable":false}}},"content_for_index":[]},"presets":{"Default":{"colors_solid_button_labels":"#FFFFFF","colors_accent_1":"#121212","colors_accent_2":"#334FB4","colors_text":"#121212","colors_outline_button_labels":"#121212","colors_background_1":"#FFFFFF","colors_background_2":"#F3F3F3","type_header_font":"assistant_n4","type_body_font":"assistant_n4","sections":{"announcement-bar":{"type":"announcement-bar","blocks":{"announcement-bar-0":{"type":"announcement","settings":{"color_scheme":"background-1"}}},"block_order":["announcement-bar-0"],"settings":{}}}},"Craft":{"colors_solid_button_labels":"#EFECEC","colors_accent_1":"#2A332F","colors_accent_2":"#476154","colors_text":"#1C1A1A","colors_outline_button_labels":"#7B8382","colors_background_1":"#EFECEC","colors_background_2":"#C1BCAE","type_header_font":"americana_n4","type_body_font":"quattrocento_sans_n4","sections":{"footer":{"type":"footer","blocks":{"menu":{"type":"link_list","settings":{}},"text":{"type":"text","settings":{}}},"block_order":["menu","text"],"settings":{"color_scheme":"accent-1"}}}}}}
+{
+  "current": {
+    "colors_solid_button_labels": "#FFFFFF",
+    "colors_accent_1": "#de3463",
+    "colors_accent_2": "#333333",
+    "colors_text": "#333333",
+    "colors_outline_button_labels": "#de3463",
+    "colors_background_1": "#FFFFFF",
+    "colors_background_2": "#efefef",
+    "type_header_font": "roboto_condensed_n7",
+    "type_body_font": "roboto_n4",
+    "body_scale": 100,
+    "type_button_font": "roboto_mono_n4",
+    "sale_badge_color_scheme": "accent-1",
+    "sold_out_badge_color_scheme": "background-1",
+    "page_width": "1200",
+    "social_twitter_link": "",
+    "social_facebook_link": "https:\/\/www.facebook.com\/gradprepofficial",
+    "social_instagram_link": "https:\/\/www.instagram.com\/gradprepofficial",
+    "favicon": "shopify:\/\/shop_images\/Group_3ff1ef46-8e24-4350-9d30-bf263c0f4b66.png",
+    "currency_code_enabled": false,
+    "autocomplete_cart_discount": "",
+    "discount_percent": 0,
+    "checkout_logo_image": "shopify:\/\/shop_images\/GradPrep-Wordmark-Horizontal-01.png",
+    "checkout_accent_color": "#de3463",
+    "checkout_button_color": "#e22358",
+    "checkout_error_color": "#de3463",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "blocks": {
+          "announcement-bar-0": {
+            "type": "announcement",
+            "settings": {
+              "text": "Get Started Today for $1!",
+              "color_scheme": "inverse",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "announcement-bar-0"
+        ],
+        "settings": {
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "id_section": "",
+          "color_scheme": "accent-1",
+          "logo_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/8904\/9026\/files\/GradPrep-horizontal.svg?v=1639745652",
+          "menu": "main-menu",
+          "menu_second": "",
+          "menu_account": "account-menu",
+          "menu_mobile": "",
+          "show_line_separator": true
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "footer-0": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Our Products",
+              "menu": ""
+            }
+          },
+          "bab1964a-ff42-41dd-8854-10c2f164ae6a": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Information",
+              "menu": ""
+            }
+          },
+          "4d8bacca-1ffd-4679-afdc-de5eaeb1f199": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Contact us",
+              "menu": ""
+            }
+          },
+          "c2a8ea02-a312-49bc-af92-14fbf6acdcc9": {
+            "type": "legal",
+            "settings": {
+              "url_page": "shopify:\/\/products\/gmat-test-prep",
+              "legal_text": "GMAT™ is a registered trademark of the Graduate Management Admission Council™. The Graduate Management Admission Council does not endorse, and is not  affiliated with the owner or content of GradPrep.com."
+            }
+          },
+          "c468c482-4e88-4101-b7af-6c6e9f974715": {
+            "type": "legal",
+            "settings": {
+              "url_page": "shopify:\/\/products\/gre-test-prep",
+              "legal_text": "GRE® is a registered trademark of ETS. This product is not endorsed or approved by ETS."
+            }
+          },
+          "0598ea13-c9cc-451c-be74-84b0a3c3022f": {
+            "type": "legal",
+            "settings": {
+              "url_page": "shopify:\/\/products\/lsat-test-prep",
+              "legal_text": "LSAT® is a trademark owned by LSAC, which is not affiliated with, and does not endorse, this GradPrep.com."
+            }
+          },
+          "11ac171b-86a1-456a-9a98-eafc92c3ff4b": {
+            "type": "legal",
+            "settings": {
+              "url_page": "shopify:\/\/products\/mcat-test-prep",
+              "legal_text": "MCAT® is a registered trademark of the Association of American Medical Colleges."
+            }
+          }
+        },
+        "block_order": [
+          "footer-0",
+          "bab1964a-ff42-41dd-8854-10c2f164ae6a",
+          "4d8bacca-1ffd-4679-afdc-de5eaeb1f199",
+          "c2a8ea02-a312-49bc-af92-14fbf6acdcc9",
+          "c468c482-4e88-4101-b7af-6c6e9f974715",
+          "0598ea13-c9cc-451c-be74-84b0a3c3022f",
+          "11ac171b-86a1-456a-9a98-eafc92c3ff4b"
+        ],
+        "settings": {
+          "id_section": "",
+          "color_scheme": "background-1",
+          "newsletter_enable": true,
+          "copyright__content": "LearningExpress, LLC. All rights reserved.",
+          "legal_text": "GRE® is a registered trademark of ETS. This product is not endorsed or approved by ETS. GMAT™ is a registered trademark of the Graduate Management Admission Council™. The Graduate Management Admission Council does not endorse, and is not affiliated with the owner or content of GradPrep.com. LSAT® is a trademark owned by LSAC, which is not affiliated with, and does not endorse, this GradPrep.com. MCAT® is a registered trademark of the Association of American Medical Colleges.",
+          "newsletter_heading": "Start",
+          "newsletter_heading--underline-word": "Today for $1",
+          "newsletter_text": "Try GradPrep for one week for just $1!",
+          "show_social": true,
+          "enable_country_selector": false,
+          "enable_language_selector": false,
+          "payment_enable": false
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  },
+  "presets": {
+    "Default": {
+      "colors_solid_button_labels": "#FFFFFF",
+      "colors_accent_1": "#121212",
+      "colors_accent_2": "#334FB4",
+      "colors_text": "#121212",
+      "colors_outline_button_labels": "#121212",
+      "colors_background_1": "#FFFFFF",
+      "colors_background_2": "#F3F3F3",
+      "type_header_font": "assistant_n4",
+      "type_body_font": "assistant_n4",
+      "sections": {
+        "announcement-bar": {
+          "type": "announcement-bar",
+          "blocks": {
+            "announcement-bar-0": {
+              "type": "announcement",
+              "settings": {
+                "color_scheme": "background-1"
+              }
+            }
+          },
+          "block_order": [
+            "announcement-bar-0"
+          ],
+          "settings": {
+          }
+        }
+      }
+    },
+    "Craft": {
+      "colors_solid_button_labels": "#EFECEC",
+      "colors_accent_1": "#2A332F",
+      "colors_accent_2": "#476154",
+      "colors_text": "#1C1A1A",
+      "colors_outline_button_labels": "#7B8382",
+      "colors_background_1": "#EFECEC",
+      "colors_background_2": "#C1BCAE",
+      "type_header_font": "americana_n4",
+      "type_body_font": "quattrocento_sans_n4",
+      "sections": {
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "menu": {
+              "type": "link_list",
+              "settings": {
+              }
+            },
+            "text": {
+              "type": "text",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "menu",
+            "text"
+          ],
+          "settings": {
+            "color_scheme": "accent-1"
+          }
+        }
+      }
+    }
+  }
+}
