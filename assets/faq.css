@@ -1,0 +1,137 @@
+h1 { 
+    padding-top: 20px;
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 34px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #333333;
+}
+
+h2 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+h3 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+}
+.faq_container {
+    display:grid;
+    grid-template-columns: 30% 30%;
+    justify-content: center;
+    padding: 30px 10px 50px 10px;
+}
+
+.faq_wrapper {
+    justify-self: left;
+    padding: 10px 10px 10px 20px;
+
+}
+.slick-list {
+    padding: 0 13px;
+}
+.slick-arrow {
+    display: none;
+}
+.slick-btn {
+    top: auto;
+    bottom: -56px;
+    border: 1.5px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    z-index: 3;
+}
+.slick-btn::before {
+    display: none;
+}
+.slick-btn svg {
+    display: block;
+    padding: 7px 12px;
+    width: 33px;
+    height: 30px;
+}
+.slick-prev {
+    left: 29%;
+}
+.slick-prev svg {
+    transform: rotate(180deg);
+}
+.slick-next {
+    right: 29%;
+}
+.slick-dots li {
+    width: 10px;
+    height: 10px;
+    margin: 0 3px;
+}
+.slick-dots li button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1.16px solid #333;
+    padding: 0;
+    opacity: 0.6;
+}
+.slick-dots li button::before {
+    top: 1px;
+    font-size: 10px;
+    line-height: 10px;
+    width: 10px;
+    height: 10px;
+    color: transparent;
+}
+.slick-dots li.slick-active button {
+    opacity: 1;
+}
+.slick-dots li.slick-active button::before {
+    color: #333;
+    opacity: 1;
+}
+
+.slick-dotted.slick-slider {
+    margin-bottom: 79px;
+}
+
+.faq-squiggles {
+    position: relative;
+    left: 47%;
+    top: -60px;
+}
+@media only screen and (max-width: 280px) {
+    .faq_container {
+        grid-template-columns: 100%;
+    }
+
+    .faq_wrapper {
+        width: 280px !important;
+        padding: 10px 10px 10px 29px !important;
+    }
+
+    
+}
+
+@media only screen and  (min-width: 281px) and (max-width: 750px) {
+    .faq_container {
+        grid-template-columns: 100%;
+    }
+
+    .faq_wrapper {
+        width: 347px !important;
+        padding: 10px 10px 10px 29px !important;
+    }
+    
+}
