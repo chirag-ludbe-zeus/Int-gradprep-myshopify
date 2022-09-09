@@ -1,0 +1,29 @@
+<img srcset=" {%- if image_src.width >= 30 -%}{{ image_src | img_url: '40x' }} 40w,{%- endif -%}
+		{%- if image_src.width >= 120 -%}{{ image_src | img_url: '120x' }} 120w,{%- endif -%}
+		{%- if image_src.width >= 320 -%}{{ image_src | img_url: '320x' }} 320w,{%- endif -%}
+		{%- if image_src.width >= 375 -%}{{ image_src | img_url: '375x' }} 375w,{%- endif -%}
+		{%- if image_src.width >= 480 -%}{{ image_src | img_url: '480x' }} 480w,{%- endif -%}
+		{%- if image_src.width >= 750 -%}{{ image_src | img_url: '750x' }} 750w,{%- endif -%}
+		{%- if image_src.width >= 1100 -%}{{ image_src | img_url: '1100x' }} 1100w,{%- endif -%}
+		{%- if image_src.width >= 1280 -%}{{ image_src | img_url: '1280x' }} 1280w,{%- endif -%}
+		{%- if image_src.width >= 1500 -%}{{ image_src | img_url: '1500x' }} 1500w,{%- endif -%}
+		{%- if image_src.width >= 1780 -%}{{ image_src | img_url: '1780x' }} 1780w,{%- endif -%}
+		{%- if image_src.width >= 1900 -%}{{ image_src | img_url: '1900x' }} 1900w,{%- endif -%}
+		{%- if image_src.width >= 2800 -%}{{ image_src | img_url: '2800x' }} 2800w{%- endif -%}"
+		sizes="	(max-width: 320px) 320px,
+				(max-width: 480px) 480px,
+				(max-width: 750px) 750px,
+				(max-width: 1100px) 1100px,
+				(max-width: 1280px) 1280px,
+				(max-width: 1500px) 1500px,
+				(max-width: 1780px) 1780px,
+				(max-width: 1900px) 1900px,
+				2800px"
+		src="{{ image_src | img_url: '20x' }}"
+		loading="lazy"
+		alt="{{ image_src.alt | escape }}"
+		width="{{ image_src.width }}"
+		height="{{image_src.width | divided_by: image_src.aspect_ratio }}"
+		class="{{class_img}}"
+	>
+

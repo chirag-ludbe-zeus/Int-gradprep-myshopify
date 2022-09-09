@@ -1,0 +1,43 @@
+<li class="article-index {% if posts_per_row == 2 %}span-6{% elsif posts_per_row == 3 %}span-4{% else %}span-12 grid__wrapper grid__wrapper-nest{% endif %} sm-span-12 auto bottom-article">
+    <div class="article-image {% if posts_per_row == 1 or template contains 'blog' %}span-5{% else %}span-12{% endif %} sm-span-12 auto bottom-article-img">
+        {% if article.image %}
+            <a href="{{ article.url }}">
+
+                <img  class="box-ratio" src="{{ article.image | img_url: '800x' }}" alt="{{ article.image.alt }}">
+
+            </a>
+        {% else %}
+            {% capture placeholderCycle %}{% cycle 'collection-1', 'collection-2', 'collection-3' %}{% endcapture %}
+            <div class="onboard">
+                {{ placeholderCycle | placeholder_svg_tag }}
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="rte excerpt {% if posts_per_row == 1 or template contains 'blog' %}span-7{% else %}span-12{% endif %} sm-span-12 auto bottom-article-desc">
+        {% if section.settings.show_above %}
+            {% if section.settings.show_date or section.settings.show_author %}
+                <p class="posted hide-mobile">{% if section.settings.show_date %}{{ article.published_at | date: "%B %d, %Y"}}{% endif %}{% if section.settings.show_date and section.settings.show_author %} – {% endif %}{% if section.settings.show_author %}{{ article.author }}{% endif %}</p>
+                <p class="posted hide-desktop">POST/{% if section.settings.show_date %}{{ article.published_at | date: "%b %d, %Y" | replace: ",", "." }}{% endif %}</p>
+            {% endif %}
+        {% endif %}
+        <h3 class="post-title">
+            <a href="{{ article.url }}">{{ article.title }}</a>
+        </h3>
+        {% unless section.settings.show_above %}
+            {% if section.settings.show_date or section.settings.show_author %}
+                <p class="posted">{% if section.settings.show_date %}{{ article.published_at | date }}{% endif %}{% if section.settings.show_date and section.settings.show_author %} – {% endif %}{% if section.settings.show_author %}{{ article.author }}{% endif %}</p>
+            {% endif %}
+        {% endunless %}
+        <div class="article-headline">
+            <p class="rte">
+                {{ article.excerpt_or_content | strip_html | truncatewords: 60 }}
+            </p>
+            <div class="kr-item">
+                <a href="{{ article.url }}" >
+                    <span class="vib-center">Keep Reading</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</li>
