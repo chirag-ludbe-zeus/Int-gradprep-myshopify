@@ -1,0 +1,213 @@
+.main-section{
+  margin: 10px;
+}
+
+.testimonial-section{
+  display: flex;
+/*   margin-top: 29px; */
+}
+
+.testimonial-image{
+  border-radius: 50%;
+  height: 101px;
+  width: 101px;
+}
+
+.testimonial-content{
+  margin: 13px 29px 29px 29px !important;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #000000;
+}
+
+.testimonial-heading{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  color: #000000;
+}
+
+.custom-padding{
+  padding: 0 !important;
+  overflow-wrap: normal;
+}
+
+.custom-heading{
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+  text-transform: none !important;
+  overflow-wrap: unset;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  color: #000000;
+  line-height: unset;
+}
+
+.custom-image-first{
+/*   margin-left: 43px !important; */
+}
+
+@media only screen and (max-width: 768px){
+  .custom-image-first{
+    margin-left: 0 !important;
+  }
+  .custom-padding{
+    margin-left: 0;
+  }
+}
+
+.custom-text{
+  width: 100% !important;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.custom-text-grid{
+  padding: 30px 40px !important;
+}
+
+/* Predefined CSS */
+.image-with-text {
+  margin-top: 5rem;
+}
+
+.image-with-text:not(.color-scheme-background-1) {
+  margin-bottom: 5rem;
+}
+
+@media screen and (min-width: 990px) {
+  .image-with-text {
+    margin-bottom: calc(5rem + var(--page-width-margin));
+  }
+}
+
+.image-with-text .grid {
+  margin-left: 0;
+  margin-bottom: 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.image-with-text__grid {
+/*   overflow: hidden; */
+}
+
+@media screen and (min-width: 990px) {
+  .image-with-text__grid--reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.image-with-text__media {
+  background-color: transparent;
+  min-height: 100%;
+}
+
+.image-with-text__media--small {
+  height: 19.4rem;
+}
+
+.image-with-text__media--large {
+  height: 43.5rem;
+}
+
+@media screen and (min-width: 990px) {
+  .image-with-text__media--small {
+    height: 31.4rem;
+  }
+
+  .image-with-text__media--large {
+    height: 69.5rem;
+  }
+}
+
+.image-with-text__media--placeholder {
+  background-color: rgba(var(--color-foreground), 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.image-with-text__media--placeholder.image-with-text__media--adapt {
+  height: 20rem;
+}
+
+@media screen and (min-width: 990px) {
+  .image-with-text__media--placeholder.image-with-text__media--adapt {
+    height: 30rem;
+  }
+}
+
+.image-with-text__media--placeholder > svg {
+  position: absolute;
+  left: 50%;
+  max-width: 80rem;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  fill: currentColor;
+}
+
+.image-with-text__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  justify-content: center;
+}
+
+@media screen and (min-width: 990px) {
+  .image-with-text__grid--reverse .image-with-text__content {
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .image-with-text__content {
+    /*padding: 6rem 7rem 7rem;*/
+  }
+}
+
+.image-with-text__content > * + * {
+  margin-top: 2rem;
+}
+
+.image-with-text__content > .custom-custom-image-with-text__text:empty ~ a {
+  margin-top: 2rem;
+}
+
+.image-with-text__content > :first-child:is(.image-with-text__heading) {
+  margin-top: 0;
+}
+
+.image-with-text__content :last-child:is(.image-with-text__heading) {
+  margin-bottom: 0;
+}
+
+.image-with-text__content .button + .custom-image-with-text__text {
+  margin-top: 2rem;
+}
+
+.image-with-text__content .custom-image-with-text__text + .button {
+  margin-top: 3rem;
+}
+
+.image-with-text__heading {
+  margin-bottom: 0;
+}
+
+.custom-image-with-text__text p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  color: #333333;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.custom-image-with-text{align-items:center; background-color:#F3F3F3}.custom-image-with-text.grid__item img{max-height:460px}.section-width-large{max-width:1440px}.section-width-normal{max-width:1200px}.image-with-text__media--image{border-radius:6px;-o-object-fit:contain!important;object-fit:contain!important}.heading-mobile{display:none}.heading-desktop{display:block}.image-with-text__content .custom-image-with-text__text{margin-top:10px}.custom-primary-button{margin-top:8px!important; border-radius: 11px; min-width: 197px; width: 197px; font-family: Roboto,Arial,sans-serif; font-weight: 500; text-transform: none; letter-spacing: unset; font-size: 20px;}.image-with-text.custom-section-space{margin:88px auto}.custom-image-with-text__text{width:447px}.image-with-text__heading{font-family:"Roboto",Arial,sans-serif;font-style:normal;font-weight:700;text-transform:uppercase;color:#333;width:447px}.image-with-text__content{padding:2rem 80px 2rem 2rem}@media only screen and (max-width:990px){.image-with-text.custom-section-space{margin-top:55px;margin-bottom:15px}.image-with-text.custom-section-space.custom-section-space-background{margin-bottom:88px}.image-with-text.section-width-large{margin-top:20px}.grid--2-col-tablet .grid__item{width:100%}.heading-mobile{margin:0 auto;display:block}.heading-desktop{display:none}.image-with-text__grid--mobile--reverse{flex-direction:column-reverse}.image-with-text__heading{margin:auto;width:100%;}.image-with-text__content{padding:0;margin-top:41px}.custom-primary-button{padding:10px 28px;margin:0 auto;display:flex;align-items:center;text-align:center;letter-spacing:.08em;text-transform:uppercase;color:#FFF} p strong{margin-left:0}}@media screen and (max-width:990px){.image-with-text__grid--mobile--reverse .image-with-text__content{margin-top:0}.custom-image-with-text__text{margin:16px auto auto}}@media screen and (min-width:991px) and (max-width:1200px){.image-with-text__heading,.custom-image-with-text__text{width:360px}.image-with-text.section-width-normal .image-with-text__content{padding:4rem}.image-with-text.section-width-large .image-with-text__content{padding:2rem}.image-with-text.section-width-large .strong-background-image{margin:0}.strong-background-image{margin:0 auto}}
